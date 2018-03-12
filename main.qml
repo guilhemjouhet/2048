@@ -1,25 +1,26 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 
-
-
 Window {
     visible: true
-    width: 640
-    height: 480
+    width: 400
+    height: 400
     color: "#aa0000"
-    title: qsTr("Hello World")
+    title: qsTr("2018")
 
     Rectangle {
         id: rectangle
-        x: 220
-        y: 96
+        x: 200
+        y: 428
         width: 200
         height: 200
         color: "#ffffff"
 
+
         Text {
             id: text1
+            x: -94
+            y: 8
             width: 200
             height: 200
             text: vueToutesTuiles.cptQML
