@@ -5,7 +5,7 @@
 class Tuile : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString tuileQML READ readTuile NOTIFY tuileChanged)
+    Q_PROPERTY(QString cptQML READ readTuile NOTIFY tuileChanged)
 public:
     explicit Tuile (QObject *parent = nullptr);
     Q_INVOKABLE void changement_valeur(int val);
