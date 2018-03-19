@@ -7,7 +7,7 @@ Window {
     width: 400
     height: 400
     color: "#aa0000"
-    title: qsTr(2018)
+    title: qsTr("2018")
 
 
 

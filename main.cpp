@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     ListeTuile liste_tuile;
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("vueToutesTuiles",liste_tuile.getTuile1());
+    engine.rootContext()->setContextProperty("vueToutesTuiles",liste_tuile.getTuile(1));
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())

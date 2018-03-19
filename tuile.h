@@ -11,6 +11,7 @@ public:
     Q_INVOKABLE void changement_valeur(int val);
     Q_INVOKABLE int val();
     QString readTuile();
+    Tuile& operator=  (const Tuile &tuile);
 
 signals:
     void tuileChanged();

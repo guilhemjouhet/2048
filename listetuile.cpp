@@ -3,7 +3,7 @@
 
 ListeTuile::ListeTuile(QObject *parent) : QObject(parent)
 {
-    Tuile tuile1();
+    Tuile tuile1;
     Tuile tuile2;
     Tuile tuile3;
     Tuile tuile4;
@@ -19,8 +19,12 @@ ListeTuile::ListeTuile(QObject *parent) : QObject(parent)
     Tuile tuile14;
     Tuile tuile15;
     Tuile tuile16;
-    /*std::vector<Tuile*> Ltuile(16);
-    Ltuile[0]=&tuile1;
+    /*std::vector<Tuile> Ltuile(16);
+    for (int i=0;i<16;i=i+1){
+        Tuile tuile;
+        Ltuile[i]=tuile;
+    }*/
+    /*Ltuile[0]=&tuile1;
     Ltuile[1]=&tuile2;
     Ltuile[2]=&tuile3;
     Ltuile[3]=&tuile4;
@@ -42,6 +46,6 @@ ListeTuile::ListeTuile(QObject *parent) : QObject(parent)
     emit listetuileChanged();
 }*/
 
-Tuile* ListeTuile::getTuile1(){
+Tuile* ListeTuile::getTuile(int i){
     return &tuile1;
 }

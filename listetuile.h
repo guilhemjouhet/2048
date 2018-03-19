@@ -10,7 +10,7 @@ class ListeTuile : public QObject
 public:
     explicit ListeTuile(QObject *parent = nullptr);
     //Q_INVOKABLE void fusionH();
-    Q_INVOKABLE Tuile* getTuile1();
+    Q_INVOKABLE Tuile* getTuile(int i);
 
 signals:
     //void listetuileChanged();
@@ -33,7 +33,7 @@ private:
     Tuile tuile14;
     Tuile tuile15;
     Tuile tuile16;
-    //std::vector<Tuile*> Ltuile;
+    //std::vector<Tuile> Ltuile;
 };
 
 #endif // LISTETUILE_H

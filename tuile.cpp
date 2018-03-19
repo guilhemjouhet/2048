@@ -16,3 +16,10 @@ int Tuile::val(){
 QString Tuile::readTuile(){
     return QString::number(valeur);
 }
+
+Tuile& Tuile::operator =(const Tuile &tuile) {
+    if (this != &tuile) {
+        valeur = tuile.valeur;
+    }
+    return *this;
+}
