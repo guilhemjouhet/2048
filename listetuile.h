@@ -9,10 +9,11 @@ class ListeTuile : public QObject
     Q_OBJECT
 public:
     explicit ListeTuile(QObject *parent = nullptr);
-    Q_INVOKABLE void fusionH();
+    //Q_INVOKABLE void fusionH();
+    Q_INVOKABLE Tuile* getTuile1();
 
 signals:
-    void listetuileChanged();
+    //void listetuileChanged();
 
 public slots:
 private:

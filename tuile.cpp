@@ -13,6 +13,6 @@ int Tuile::val(){
     return valeur;
     }
 
-QString Tuile::readtuile(){
+QString Tuile::readTuile(){
     return QString::number(valeur);
 }

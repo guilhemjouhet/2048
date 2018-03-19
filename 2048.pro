@@ -32,3 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     tuile.h \
     listetuile.h
+
+DISTFILES += \
+    test.qml

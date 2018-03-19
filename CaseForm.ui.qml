@@ -1,8 +1,8 @@
-import QtQuick 2.0
+import QtQuick 2.4
 
 Item {
-    width: 40
-    height: 40
+    width: 100
+    height: 100
 
     Rectangle {
         id: rectangle
@@ -11,9 +11,9 @@ Item {
 
         Text {
             id: text1
-            text: vueToutesTuiles.cptQML
+            text: vueToutesTuiles.tuileQML
+            anchors.fill: parent
             font.pixelSize: 12
         }
     }
-
 }

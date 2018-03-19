@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>case.qml</file>
+        <file>CaseForm.ui.qml</file>
     </qresource>
 </RCC>

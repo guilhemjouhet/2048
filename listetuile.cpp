@@ -3,7 +3,7 @@
 
 ListeTuile::ListeTuile(QObject *parent) : QObject(parent)
 {
-    Tuile tuile1;
+    Tuile tuile1();
     Tuile tuile2;
     Tuile tuile3;
     Tuile tuile4;
@@ -37,7 +37,11 @@ ListeTuile::ListeTuile(QObject *parent) : QObject(parent)
     Ltuile[14]=&tuile15;
     Ltuile[15]=&tuile16;*/
 }
-void ListeTuile::fusionH(){
+/*void ListeTuile::fusionH(){
 
     emit listetuileChanged();
+}*/
+
+Tuile* ListeTuile::getTuile1(){
+    return &tuile1;
 }
