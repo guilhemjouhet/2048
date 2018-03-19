@@ -7,7 +7,7 @@ Window {
     visible: true
     width: 400
     height: 400
-    title: qsTr("COMPTEUR")
+    title: qsTr("2048")
 
     MainForm {
         id: mainForm
