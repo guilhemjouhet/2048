@@ -14,7 +14,7 @@ Window {
 
         Text {
             id: text1
-            text: qsTr(vueObjetCpt0.cptQML)
+            text: qsTr(vueObjetTuile.valQML[0])
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
@@ -31,7 +31,7 @@ Window {
 
         Text {
             id: text2
-            text: qsTr(vueObjetCpt1.cptQML)
+            text: qsTr(vueObjetTuile.valQML[1])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -48,7 +48,7 @@ Window {
 
         Text {
             id: text3
-            text: qsTr(vueObjetCpt2.cptQML)
+            text: qsTr(vueObjetTuile.valQML[2])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -68,7 +68,7 @@ Window {
 
         Text {
             id: text4
-            text: qsTr(vueObjetCpt3.cptQML)
+            text: qsTr(vueObjetTuile.valQML[3])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -85,7 +85,7 @@ Window {
 
         Text {
             id: text5
-            text: qsTr(vueObjetCpt4.cptQML)
+            text: qsTr(vueObjetTuile.valQML[4])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -102,7 +102,7 @@ Window {
 
         Text {
             id: text6
-            text: qsTr(vueObjetCpt5.cptQML)
+            text: qsTr(vueObjetTuile.valQML[5])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -119,7 +119,7 @@ Window {
 
         Text {
             id: text7
-            text: qsTr(vueObjetCpt6.cptQML)
+            text: qsTr(vueObjetTuile.valQML[6])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -136,7 +136,7 @@ Window {
 
         Text {
             id: text8
-            text: qsTr(vueObjetCpt7.cptQML)
+            text: qsTr(vueObjetTuile.valQML[7])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -153,7 +153,7 @@ Window {
 
         Text {
             id: text9
-            text: qsTr(vueObjetCpt8.cptQML)
+            text: qsTr(vueObjetTuile.valQML[8])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -170,7 +170,7 @@ Window {
 
         Text {
             id: text10
-            text: qsTr(vueObjetCpt9.cptQML)
+            text: qsTr(vueObjetTuile.valQML[9])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -187,7 +187,7 @@ Window {
 
         Text {
             id: text11
-            text: qsTr(vueObjetCpt10.cptQML)
+            text: qsTr(vueObjetTuile.valQML[10])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -204,7 +204,7 @@ Window {
 
         Text {
             id: text12
-            text: qsTr(vueObjetCpt11.cptQML)
+            text: qsTr(vueObjetTuile.valQML[11])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -221,7 +221,7 @@ Window {
 
         Text {
             id: text13
-            text: qsTr(vueObjetCpt12.cptQML)
+            text: qsTr(vueObjetTuile.valQML[12])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -238,7 +238,7 @@ Window {
 
         Text {
             id: text14
-            text: qsTr(vueObjetCpt13.cptQML)
+            text: qsTr(vueObjetTuile.valQML[13])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -255,7 +255,7 @@ Window {
 
         Text {
             id: text15
-            text: qsTr(vueObjetCpt14.cptQML)
+            text: qsTr(vueObjetTuile.valQML[14])
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
@@ -272,13 +272,11 @@ Window {
 
         Text {
             id: text16
-            text: qsTr(vueObjetCpt15.cptQML)
+            text: qsTr(vueObjetTuile.valQML[15])
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 12
         }
     }
-
-
 }
