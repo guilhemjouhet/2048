@@ -11,6 +11,7 @@ Window {
 
     MainForm {
         id: mainForm
+        color: qsTr(vueObjetTuile.coulQML[0])
 
         Text {
             id: text1
@@ -43,6 +44,7 @@ Window {
 
     MainForm {
         id: mainForm1
+        color: qsTr(vueObjetTuile.coulQML[1])
         anchors.left: parent.left
         anchors.leftMargin: 100
         anchors.top: parent.top
@@ -62,6 +64,7 @@ Window {
 
     MainForm {
         id: mainForm2
+        color: qsTr(vueObjetTuile.coulQML[2])
         anchors.left: parent.left
         anchors.leftMargin: 200
         anchors.top: parent.top
@@ -81,6 +84,7 @@ Window {
 
     MainForm {
         id: mainForm3
+        color: qsTr(vueObjetTuile.coulQML[3])
         width: 100
         height: 100
         anchors.left: parent.left
@@ -102,6 +106,7 @@ Window {
 
     MainForm {
         id: mainForm4
+        color: qsTr(vueObjetTuile.coulQML[4])
         anchors.left: parent.left
         anchors.leftMargin: 0
         anchors.top: parent.top
@@ -121,6 +126,7 @@ Window {
 
     MainForm {
         id: mainForm5
+        color: qsTr(vueObjetTuile.coulQML[5])
         anchors.left: parent.left
         anchors.leftMargin: 100
         anchors.top: parent.top
@@ -140,6 +146,7 @@ Window {
 
     MainForm {
         id: mainForm6
+        color: qsTr(vueObjetTuile.coulQML[6])
         anchors.left: parent.left
         anchors.leftMargin: 200
         anchors.top: parent.top
@@ -159,6 +166,7 @@ Window {
 
     MainForm {
         id: mainForm7
+        color: qsTr(vueObjetTuile.coulQML[7])
         anchors.left: parent.left
         anchors.leftMargin: 300
         anchors.top: parent.top
@@ -178,6 +186,7 @@ Window {
 
     MainForm {
         id: mainForm8
+        color: qsTr(vueObjetTuile.coulQML[8])
         anchors.left: parent.left
         anchors.leftMargin: 0
         anchors.top: parent.top
@@ -197,6 +206,7 @@ Window {
 
     MainForm {
         id: mainForm9
+        color: qsTr(vueObjetTuile.coulQML[9])
         anchors.left: parent.left
         anchors.leftMargin: 100
         anchors.top: parent.top
@@ -216,6 +226,7 @@ Window {
 
     MainForm {
         id: mainForm10
+        color: qsTr(vueObjetTuile.coulQML[10])
         anchors.left: parent.left
         anchors.leftMargin: 200
         anchors.top: parent.top
@@ -235,6 +246,7 @@ Window {
 
     MainForm {
         id: mainForm11
+        color: qsTr(vueObjetTuile.coulQML[11])
         anchors.left: parent.left
         anchors.leftMargin: 300
         anchors.top: parent.top
@@ -254,6 +266,7 @@ Window {
 
     MainForm {
         id: mainForm12
+        color: qsTr(vueObjetTuile.coulQML[12])
         anchors.left: parent.left
         anchors.leftMargin: 0
         anchors.top: parent.top
@@ -273,6 +286,7 @@ Window {
 
     MainForm {
         id: mainForm13
+        color: qsTr(vueObjetTuile.coulQML[13])
         anchors.left: parent.left
         anchors.leftMargin: 100
         anchors.top: parent.top
@@ -292,6 +306,7 @@ Window {
 
     MainForm {
         id: mainForm14
+        color: qsTr(vueObjetTuile.coulQML[14])
         anchors.left: parent.left
         anchors.leftMargin: 200
         anchors.top: parent.top
@@ -311,6 +326,7 @@ Window {
 
     MainForm {
         id: mainForm15
+        color: qsTr(vueObjetTuile.coulQML[15])
         anchors.left: parent.left
         anchors.leftMargin: 300
         anchors.top: parent.top

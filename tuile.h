@@ -8,11 +8,13 @@ class Tuile : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QList<QString> valQML READ readTuile NOTIFY tuileChanged)
+    Q_PROPERTY(QList<QString> coulQML READ coulTuile NOTIFY tuileChanged)
 
 
 public:
     explicit Tuile (QObject *parent = nullptr);
     QList<QString> readTuile();
+    QList<QString> coulTuile();
     void Nouveau();
     Q_INVOKABLE void Gauche();
     void DeplGauche();
@@ -28,6 +30,7 @@ public:
     void FusBas();
     friend ostream& operator << (ostream& s, const Tuile &tab);
     int my_rand(int max);
+    string Couleur(int i);
 
 signals:
     void tuileChanged();

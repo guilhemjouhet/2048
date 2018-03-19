@@ -17,13 +17,19 @@ QList<QString> Tuile::readTuile(){
     return l;
 }
 
+QList<QString> Tuile::coulTuile(){
+    QList<QString> l;
+    for (int i=0;i<16;i++)
+        l.append(QString::fromStdString(Couleur(T[i])));
+    return l;
+}
+
 void Tuile::Gauche(){
     DeplGauche();
     FusGauche();
     DeplGauche();
     Nouveau();
     emit tuileChanged();
-    cout << nb_cases_vides << endl;
 }
 
 void Tuile::Droite(){
@@ -32,7 +38,6 @@ void Tuile::Droite(){
     DeplDroite();
     Nouveau();
     emit tuileChanged();
-    cout<<nb_cases_vides<<endl;
 }
 
 void Tuile::Haut(){
@@ -41,7 +46,6 @@ void Tuile::Haut(){
     DeplHaut();
     Nouveau();
     emit tuileChanged();
-    cout<<nb_cases_vides<<endl;
 }
 
 void Tuile::Bas(){
@@ -50,7 +54,6 @@ void Tuile::Bas(){
     DeplBas();
     Nouveau();
     emit tuileChanged();
-    cout<<nb_cases_vides<<endl;
 }
 
 void Tuile::Nouveau(){
@@ -146,7 +149,6 @@ void Tuile::DeplBas(){
 }
 
 void Tuile::FusGauche(){
-    cout<<nb_cases_vides<<endl;
     for (int i=0;i<4;i++){
         if (T[4*i]==T[4*i+1]){
             T[4*i]=T[4*i]*2;
@@ -291,4 +293,17 @@ int Tuile::my_rand (int max){
    int res = time (NULL);
    res = res %max;
    return (res);
+}
+
+string Tuile::Couleur (int i){
+    int j = i;
+    int indice = 0;
+    if (j!=0){
+        while (j>1){
+            j=j/2;
+            indice++;
+        }
+    }
+    string tab[12]={"#777777","#a9eafe","#77b5fe","#791cf8","#fd3f92","#fe1b00","#ff7f00","#f3d617","#87e98d","#01d758","#e1ce9a","#ffffff"};
+    return (tab[indice]);
 }
