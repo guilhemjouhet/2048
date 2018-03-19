@@ -23,6 +23,7 @@ void Tuile::Gauche(){
     DeplGauche();
     Nouveau();
     emit tuileChanged();
+    cout << nb_cases_vides << endl;
 }
 
 void Tuile::Droite(){
@@ -31,6 +32,7 @@ void Tuile::Droite(){
     DeplDroite();
     Nouveau();
     emit tuileChanged();
+    cout<<nb_cases_vides<<endl;
 }
 
 void Tuile::Haut(){
@@ -39,6 +41,7 @@ void Tuile::Haut(){
     DeplHaut();
     Nouveau();
     emit tuileChanged();
+    cout<<nb_cases_vides<<endl;
 }
 
 void Tuile::Bas(){
@@ -47,13 +50,14 @@ void Tuile::Bas(){
     DeplBas();
     Nouveau();
     emit tuileChanged();
+    cout<<nb_cases_vides<<endl;
 }
 
 void Tuile::Nouveau(){
     int indice = my_rand(nb_cases_vides);
-    nb_cases_vides = nb_cases_vides-1;
+    nb_cases_vides=nb_cases_vides-1;
     for (int i=0;i<16;i++){
-        if (T[i]!=0)
+        if (T[i])
             indice++;
         else
             if (i==indice)
@@ -142,24 +146,33 @@ void Tuile::DeplBas(){
 }
 
 void Tuile::FusGauche(){
+    cout<<nb_cases_vides<<endl;
     for (int i=0;i<4;i++){
         if (T[4*i]==T[4*i+1]){
             T[4*i]=T[4*i]*2;
             T[4*i+1]=0;
+            if (T[4*i]!=0)
+                nb_cases_vides=nb_cases_vides+1;
             if(T[4*i+2]==T[4*i+3]){
                 T[4*i+2]=T[4*i+2]*2;
                 T[4*i+3]=0;
+                if (T[4*i+2]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[4*i+1]==T[4*i+2]){
                 T[4*i+1]=T[4*i+1]*2;
                 T[4*i+2]=0;
+                if (T[4*i+1]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
             else{
                 if(T[4*i+2]==T[4*i+3]){
                     T[4*i+2]=T[4*i+2]*2;
                     T[4*i+3]=0;
+                    if (T[4*i+2]!=0)
+                        nb_cases_vides=nb_cases_vides+1;
                 }
             }
         }
@@ -171,20 +184,28 @@ void Tuile::FusDroite(){
         if (T[4*i+3]==T[4*i+2]){
             T[4*i+3]=T[4*i+3]*2;
             T[4*i+2]=0;
+            if (T[4*i+3]!=0)
+                nb_cases_vides=nb_cases_vides+1;
             if(T[4*i+1]==T[4*i]){
                 T[4*i+1]=T[4*i+1]*2;
                 T[4*i]=0;
+                if (T[4*i+1]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[4*i+1]==T[4*i+2]){
                 T[4*i+2]=T[4*i+2]*2;
                 T[4*i+1]=0;
+                if (T[4*i+2]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
             else{
                 if(T[4*i+1]==T[4*i]){
                     T[4*i+1]=T[4*i+1]*2;
                     T[4*i]=0;
+                    if (T[4*i+1]!=0)
+                        nb_cases_vides=nb_cases_vides+1;
                 }
             }
         }
@@ -196,20 +217,28 @@ void Tuile::FusHaut(){
         if (T[i]==T[4+i]){
             T[i]=T[i]*2;
             T[i+4]=0;
+            if (T[i]!=0)
+                nb_cases_vides=nb_cases_vides+1;
             if(T[i+8]==T[i+12]){
                 T[i+8]=T[i+8]*2;
                 T[i+12]=0;
+                if (T[i+8]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[i+4]==T[i+8]){
                 T[i+4]=T[i+4]*2;
                 T[i+8]=0;
+                if (T[4+i]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
             else{
                 if(T[i+8]==T[i+12]){
                     T[i+8]=T[i+8]*2;
                     T[i+12]=0;
+                    if (T[i+8]!=0)
+                        nb_cases_vides=nb_cases_vides+1;
                 }
             }
         }
@@ -221,20 +250,28 @@ void Tuile::FusBas(){
         if (T[12+i]==T[8+i]){
             T[12+i]=T[12+i]*2;
             T[i+8]=0;
+            if (T[i+12]!=0)
+                nb_cases_vides=nb_cases_vides+1;
             if(T[i+4]==T[i]){
                 T[i+4]=T[i+4]*2;
                 T[i]=0;
+                if (T[i+4]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[i+4]==T[i+8]){
                 T[i+8]=T[i+8]*2;
                 T[i+4]=0;
+                if (T[i+8]!=0)
+                    nb_cases_vides=nb_cases_vides+1;
             }
             else{
                 if(T[i+4]==T[i]){
                     T[i+4]=T[i+4]*2;
                     T[i]=0;
+                    if (T[i+4]!=0)
+                        nb_cases_vides=nb_cases_vides+1;
                 }
             }
         }

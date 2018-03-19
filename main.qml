@@ -18,6 +18,7 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
 
@@ -53,6 +54,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -90,6 +92,7 @@ Window {
             id: text4
             text: qsTr(vueObjetTuile.valQML[3])
             anchors.fill: parent
+            font.family: "Times New Roman"
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
@@ -110,6 +113,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -126,6 +130,7 @@ Window {
             id: text6
             text: qsTr(vueObjetTuile.valQML[5])
             anchors.fill: parent
+            font.family: "Times New Roman"
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
@@ -146,6 +151,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -165,6 +171,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
+            font.family: "Times New Roman"
             focus: true
         }
     }
@@ -182,6 +189,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -201,6 +209,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
+            font.family: "Times New Roman"
             focus: true
         }
     }
@@ -218,6 +227,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -237,6 +247,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
+            font.family: "Times New Roman"
             focus: true
         }
     }
@@ -254,6 +265,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -273,6 +285,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
+            font.family: "Times New Roman"
             focus: true
         }
     }
@@ -290,6 +303,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
+            font.family: "Times New Roman"
             font.pixelSize: 40
             focus: true
         }
@@ -309,6 +323,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: 40
+            font.family: "Times New Roman"
             focus: true
         }
     }
