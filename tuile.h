@@ -7,7 +7,6 @@ using namespace std;
 class Tuile : public QObject
 {
     Q_OBJECT
-    //Q_PROPERTY(QString cptQML READ readTuile NOTIFY tuileChanged)
     Q_PROPERTY(QList<QString> valQML READ readTuile NOTIFY tuileChanged)
 
 
@@ -15,16 +14,16 @@ public:
     explicit Tuile (QObject *parent = nullptr);
     QList<QString> readTuile();
     void Nouveau();
-    void Gauche();
+    Q_INVOKABLE void Gauche();
     void DeplGauche();
     void FusGauche();
-    void Droite();
+    Q_INVOKABLE void Droite();
     void DeplDroite();
     void FusDroite();
-    void Haut();
+    Q_INVOKABLE void Haut();
     void DeplHaut();
     void FusHaut();
-    void Bas();
+    Q_INVOKABLE void Bas();
     void DeplBas();
     void FusBas();
     friend ostream& operator << (ostream& s, const Tuile &tab);

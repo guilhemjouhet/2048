@@ -18,7 +18,25 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
+
+            Keys.onPressed: {
+                switch (event.key) {
+                  case Qt.Key_Up:
+                    vueObjetTuile.Haut();
+                    break;
+                  case Qt.Key_Down:
+                    vueObjetTuile.Bas();
+                    break
+                  case Qt.Key_Right:
+                    vueObjetTuile.Droite();
+                    break;
+                  case Qt.Key_Left:
+                    vueObjetTuile.Gauche();
+                    break
+                }
+            }
         }
     }
 
@@ -35,7 +53,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -53,7 +72,8 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
             font.family: "Times New Roman"
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -72,7 +92,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -89,7 +110,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -106,7 +128,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -123,7 +146,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -140,7 +164,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -157,7 +182,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -174,7 +200,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -191,7 +218,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -208,7 +236,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -225,7 +254,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -242,7 +272,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -259,7 +290,8 @@ Window {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 
@@ -276,7 +308,8 @@ Window {
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
+            font.pixelSize: 40
+            focus: true
         }
     }
 }
