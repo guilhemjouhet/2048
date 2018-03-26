@@ -1,6 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <vector>
 #include "tuile.h"
 #include <QtQml>
 
