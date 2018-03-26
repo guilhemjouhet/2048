@@ -7,6 +7,7 @@ Tuile::Tuile(QObject *parent) : QObject(parent)
         T[i]=0;
     nb_cases_vides = 16;
     Nouveau();
+    mouv = false ;
     emit tuileChanged();
 }
 
@@ -26,29 +27,49 @@ QList<QString> Tuile::coulTuile(){
 
 void Tuile::Gauche(){
     DeplGauche();
+    int ancien = nb_cases_vides;
     FusGauche();
-    Nouveau();
+    if (ancien!=nb_cases_vides)
+        mouv = true;
+    if (mouv)
+        Nouveau();
+    mouv=false;
     emit tuileChanged();
 }
 
 void Tuile::Droite(){
     DeplDroite();
+    int ancien = nb_cases_vides;
     FusDroite();
-    Nouveau();
+    if (ancien!=nb_cases_vides)
+        mouv = true;
+    if (mouv)
+        Nouveau();
+    mouv=false;
     emit tuileChanged();
 }
 
 void Tuile::Haut(){
     DeplHaut();
+    int ancien = nb_cases_vides;
     FusHaut();
-    Nouveau();
+    if (ancien!=nb_cases_vides)
+        mouv = true;
+    if (mouv)
+        Nouveau();
+    mouv=false;
     emit tuileChanged();
 }
 
 void Tuile::Bas(){
     DeplBas();
+    int ancien = nb_cases_vides;
     FusBas();
-    Nouveau();
+    if (ancien!=nb_cases_vides)
+        mouv = true;
+    if (mouv)
+        Nouveau();
+    mouv=false;
     emit tuileChanged();
 }
 
@@ -68,17 +89,23 @@ void Tuile::DeplGauche(){
     for (int i=0;i<4;i++){
         if (T[4*i+2]==0){
             T[4*i+2]=T[4*i+3];
+            if (T[4*i+2]!=0)
+                mouv = true;
             T[4*i+3]=0;
         }
         if (T[4*i+1]==0){
             T[4*i+1]=T[4*i+2];
             T[4*i+2]=T[4*i+3];
+            if (T[4*i+1]!=0)
+                mouv = true;
             T[4*i+3]=0;
         }
         if (T[4*i]==0){
             T[4*i]=T[4*i+1];
             T[4*i+1]=T[4*i+2];
             T[4*i+2]=T[4*i+3];
+            if (T[4*i]!=0)
+                mouv = true;
             T[4*i+3]=0;
         }
     }
@@ -88,17 +115,23 @@ void Tuile::DeplDroite(){
     for (int i=0;i<4;i++){
         if (T[4*i+1]==0){
             T[4*i+1]=T[4*i];
+            if (T[4*i+1]!=0)
+                mouv = true;
             T[4*i]=0;
         }
         if (T[4*i+2]==0){
             T[4*i+2]=T[4*i+1];
             T[4*i+1]=T[4*i];
+            if (T[4*i+2]!=0)
+                mouv = true;
             T[4*i]=0;
         }
         if (T[4*i+3]==0){
             T[4*i+3]=T[4*i+2];
             T[4*i+2]=T[4*i+1];
             T[4*i+1]=T[4*i];
+            if (T[4*i+3]!=0)
+                mouv = true;
             T[4*i]=0;
         }
     }
@@ -108,17 +141,23 @@ void Tuile::DeplHaut(){
     for (int i=0;i<4;i++){
         if (T[8+i]==0){
             T[8+i]=T[12+i];
+            if (T[8+i]!=0)
+                mouv = true;
             T[12+i]=0;
         }
         if (T[4+i]==0){
             T[4+i]=T[8+i];
             T[8+i]=T[12+i];
+            if (T[4+i]!=0)
+                mouv = true;
             T[12+i]=0;
         }
         if (T[i]==0){
             T[i]=T[4+i];
             T[4+i]=T[8+i];
             T[8+i]=T[12+i];
+            if (T[i]!=0)
+                mouv = true;
             T[12+i]=0;
         }
     }
@@ -128,17 +167,23 @@ void Tuile::DeplBas(){
     for (int i=0;i<4;i++){
         if (T[4+i]==0){
             T[4+i]=T[i];
+            if (T[i+4]!=0)
+                mouv = true;
             T[i]=0;
         }
         if (T[8+i]==0){
             T[8+i]=T[4+i];
             T[4+i]=T[i];
+            if (T[i+8]!=0)
+                mouv = true;
             T[i]=0;
         }
         if (T[12+i]==0){
             T[12+i]=T[8+i];
             T[8+i]=T[4+i];
             T[4+i]=T[i];
+            if (T[12+i]!=0)
+                mouv = true;
             T[i]=0;
         }
     }

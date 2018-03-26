@@ -39,6 +39,7 @@ public slots:
 private:
     int T[16];
     int nb_cases_vides;
+    bool mouv;
 
 };
 
