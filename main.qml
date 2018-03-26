@@ -26,16 +26,16 @@ Window {
             Keys.onPressed: {
                 switch (event.key) {
                   case Qt.Key_Up:
-                    vueObjetTuile.Haut();
+                    vueObjetTuile.haut();
                     break;
                   case Qt.Key_Down:
-                    vueObjetTuile.Bas();
+                    vueObjetTuile.bas();
                     break
                   case Qt.Key_Right:
-                    vueObjetTuile.Droite();
+                    vueObjetTuile.droite();
                     break;
                   case Qt.Key_Left:
-                    vueObjetTuile.Gauche();
+                    vueObjetTuile.gauche();
                     break
                 }
             }

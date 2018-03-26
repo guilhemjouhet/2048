@@ -59,7 +59,7 @@ void Tuile::init(){
     emit tuileChanged();
 }
 
-void Tuile::Gauche(){
+void Tuile::gauche(){
     DeplGauche();
     int ancien = nb_cases_vides;
     FusGauche();
@@ -73,7 +73,7 @@ void Tuile::Gauche(){
     emit tuileChanged();
 }
 
-void Tuile::Droite(){
+void Tuile::droite(){
     DeplDroite();
     int ancien = nb_cases_vides;
     FusDroite();
@@ -87,7 +87,7 @@ void Tuile::Droite(){
     emit tuileChanged();
 }
 
-void Tuile::Haut(){
+void Tuile::haut(){
     DeplHaut();
     int ancien = nb_cases_vides;
     FusHaut();
@@ -101,7 +101,7 @@ void Tuile::Haut(){
     emit tuileChanged();
 }
 
-void Tuile::Bas(){
+void Tuile::bas(){
     DeplBas();
     int ancien = nb_cases_vides;
     FusBas();
