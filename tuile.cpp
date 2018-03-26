@@ -27,7 +27,6 @@ QList<QString> Tuile::coulTuile(){
 void Tuile::Gauche(){
     DeplGauche();
     FusGauche();
-    DeplGauche();
     Nouveau();
     emit tuileChanged();
 }
@@ -35,7 +34,6 @@ void Tuile::Gauche(){
 void Tuile::Droite(){
     DeplDroite();
     FusDroite();
-    DeplDroite();
     Nouveau();
     emit tuileChanged();
 }
@@ -43,7 +41,6 @@ void Tuile::Droite(){
 void Tuile::Haut(){
     DeplHaut();
     FusHaut();
-    DeplHaut();
     Nouveau();
     emit tuileChanged();
 }
@@ -51,7 +48,6 @@ void Tuile::Haut(){
 void Tuile::Bas(){
     DeplBas();
     FusBas();
-    DeplBas();
     Nouveau();
     emit tuileChanged();
 }
@@ -152,20 +148,23 @@ void Tuile::FusGauche(){
     for (int i=0;i<4;i++){
         if (T[4*i]==T[4*i+1]){
             T[4*i]=T[4*i]*2;
-            T[4*i+1]=0;
             if (T[4*i]!=0)
                 nb_cases_vides=nb_cases_vides+1;
-            if(T[4*i+2]==T[4*i+3]){
-                T[4*i+2]=T[4*i+2]*2;
-                T[4*i+3]=0;
-                if (T[4*i+2]!=0)
+            T[4*i+1]=T[4*i+2];
+            T[4*i+2]=T[4*i+3];
+            T[4*i+3]=0;
+            if(T[4*i+1]==T[4*i+2]){
+                T[4*i+1]=T[4*i+2]*2;
+                T[4*i+2]=0;
+                if (T[4*i+1]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[4*i+1]==T[4*i+2]){
                 T[4*i+1]=T[4*i+1]*2;
-                T[4*i+2]=0;
+                T[4*i+2]=T[4*i+3];
+                T[4*i+3]=0;
                 if (T[4*i+1]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
@@ -185,20 +184,23 @@ void Tuile::FusDroite(){
     for (int i=0;i<4;i++){
         if (T[4*i+3]==T[4*i+2]){
             T[4*i+3]=T[4*i+3]*2;
-            T[4*i+2]=0;
+            T[4*i+2]=T[4*i+1];
+            T[4*i+1]=T[4*i];
+            T[4*i]=0;
             if (T[4*i+3]!=0)
                 nb_cases_vides=nb_cases_vides+1;
-            if(T[4*i+1]==T[4*i]){
-                T[4*i+1]=T[4*i+1]*2;
-                T[4*i]=0;
-                if (T[4*i+1]!=0)
+            if(T[4*i+2]==T[4*i+1]){
+                T[4*i+2]=T[4*i+1]*2;
+                T[4*i+1]=0;
+                if (T[4*i+2]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[4*i+1]==T[4*i+2]){
                 T[4*i+2]=T[4*i+2]*2;
-                T[4*i+1]=0;
+                T[4*i+1]=T[4*i];
+                T[4*i]=0;
                 if (T[4*i+2]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
@@ -218,20 +220,23 @@ void Tuile::FusHaut(){
     for (int i=0;i<4;i++){
         if (T[i]==T[4+i]){
             T[i]=T[i]*2;
-            T[i+4]=0;
+            T[i+4]=T[i+8];
+            T[i+8]=T[i+12];
+            T[i+12]=0;
             if (T[i]!=0)
                 nb_cases_vides=nb_cases_vides+1;
-            if(T[i+8]==T[i+12]){
-                T[i+8]=T[i+8]*2;
-                T[i+12]=0;
-                if (T[i+8]!=0)
+            if(T[i+4]==T[i+8]){
+                T[i+4]=T[i+8]*2;
+                T[i+8]=0;
+                if (T[i+4]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[i+4]==T[i+8]){
                 T[i+4]=T[i+4]*2;
-                T[i+8]=0;
+                T[i+8]=T[i+12];
+                T[i+12]=0;
                 if (T[4+i]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
@@ -251,20 +256,23 @@ void Tuile::FusBas(){
     for (int i=0;i<4;i++){
         if (T[12+i]==T[8+i]){
             T[12+i]=T[12+i]*2;
-            T[i+8]=0;
+            T[i+8]=T[i+4];
+            T[i+4]=T[i];
+            T[i]=0;
             if (T[i+12]!=0)
                 nb_cases_vides=nb_cases_vides+1;
-            if(T[i+4]==T[i]){
-                T[i+4]=T[i+4]*2;
-                T[i]=0;
-                if (T[i+4]!=0)
+            if(T[i+8]==T[i+4]){
+                T[i+8]=T[i+4]*2;
+                T[i+4]=0;
+                if (T[i+8]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
         }
         else {
             if (T[i+4]==T[i+8]){
                 T[i+8]=T[i+8]*2;
-                T[i+4]=0;
+                T[i+4]=T[i];
+                T[i]=0;
                 if (T[i+8]!=0)
                     nb_cases_vides=nb_cases_vides+1;
             }
@@ -304,6 +312,6 @@ string Tuile::Couleur (int i){
             indice++;
         }
     }
-    string tab[12]={"#777777","#a9eafe","#77b5fe","#791cf8","#fd3f92","#fe1b00","#ff7f00","#f3d617","#87e98d","#01d758","#e1ce9a","#ffffff"};
+    string tab[13]={"#777777","#a9eafe","#77b5fe","#791cf8","#fd3f92","#fe1b00","#ff7f00","#f3d617","#87e98d","#01d758","#e1ce9a","#ffffff","#ff00c7"};
     return (tab[indice]);
 }
