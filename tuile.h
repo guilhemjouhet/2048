@@ -10,13 +10,13 @@ class Tuile : public QObject
     Q_OBJECT
     Q_PROPERTY(QList<QString> valQML READ readTuile NOTIFY tuileChanged)
     Q_PROPERTY(QList<QString> coulQML READ coulTuile NOTIFY tuileChanged)
-    Q_PROPERTY(QString TextGameOver READ gameOver NOTIFY tuileChanged)
+    Q_PROPERTY(QList<QString> TextGameOver READ gameOver NOTIFY tuileChanged)
 
 public:
     explicit Tuile (QObject *parent = nullptr);
     QList<QString> readTuile();
     QList<QString> coulTuile();
-    QString gameOver();
+    QList<QString> gameOver();
     Q_INVOKABLE void init();
     void Nouveau();
     Q_INVOKABLE void gauche();

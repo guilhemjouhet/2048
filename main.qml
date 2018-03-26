@@ -25,16 +25,16 @@ Window {
 
             Keys.onPressed: {
                 switch (event.key) {
-                  case Qt.Key_Up:
+                case Qt.Key_Up:
                     vueObjetTuile.haut();
                     break;
-                  case Qt.Key_Down:
+                case Qt.Key_Down:
                     vueObjetTuile.bas();
                     break
-                  case Qt.Key_Right:
+                case Qt.Key_Right:
                     vueObjetTuile.droite();
                     break;
-                  case Qt.Key_Left:
+                case Qt.Key_Left:
                     vueObjetTuile.gauche();
                     break
                 }
@@ -368,15 +368,30 @@ Window {
         }
     }
 
-    Text {
-        id: text18
-        color: "#cf0707"
-        text: qsTr(vueObjetTuile.TextGameOver)
-        font.bold: true
-        font.family: "Courier"
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
-        anchors.fill: parent
-        font.pixelSize: 400
+    Rectangle {
+        id: rectangle1
+        height: 400
+        color: qsTr(vueObjetTuile.TextGameOver[1])
+        opacity: 0.7
+        anchors.top: parent.top
+        anchors.topMargin: 0
+        anchors.right: parent.right
+        anchors.left: parent.left
+
+        Text {
+            id: text18
+            width: 400
+            height: 400
+            color: "#cf0707"
+            text: qsTr(vueObjetTuile.TextGameOver[0])
+            renderType: Text.NativeRendering
+            anchors.top: parent.top
+            anchors.topMargin: 0
+            font.bold: true
+            font.family: "Times New Roman"
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: 60
+        }
     }
 }

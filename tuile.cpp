@@ -26,8 +26,8 @@ QList<QString> Tuile::coulTuile(){
     return l;
 }
 
-QString Tuile::gameOver(){
-    QString texteGameOver;
+QList<QString> Tuile::gameOver(){
+    QList<QString> texteGameOver;
     if (JeuFini){
         bool VraieFin = true;
         for (int i=0;i<4;i++){
@@ -38,14 +38,20 @@ QString Tuile::gameOver(){
                     VraieFin=false;
             }
         }
-        if (VraieFin)
-            texteGameOver=QString::fromStdString("Game Over");
-        else
-            texteGameOver=QString::fromStdString("");
+        if (VraieFin){
+            texteGameOver.append(QString::fromStdString("Game Over"));
+            texteGameOver.append(QString::fromStdString("#777777"));
+        }
+        else{
+            texteGameOver.append(QString::fromStdString(""));
+            texteGameOver.append(QString::fromStdString("#00000000"));
+        }
         JeuFini=false;
     }
-    else
-        texteGameOver=QString("");
+    else{
+        texteGameOver.append(QString::fromStdString(""));
+        texteGameOver.append(QString::fromStdString("#00000000"));
+    }
     return texteGameOver;
 }
 
