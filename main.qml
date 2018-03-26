@@ -6,7 +6,7 @@ Window {
     id: window
     visible: true
     width: 400
-    height: 400
+    height: 500
     title: qsTr("2048")
 
     MainForm {
@@ -342,5 +342,41 @@ Window {
             font.family: "Times New Roman"
             focus: true
         }
+    }
+
+    Rectangle {
+        id: rectangle
+        width: 400
+        height: 100
+        color: "#ffffff"
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 0
+
+        Text {
+            id: text17
+            text: qsTr("(Re)commencer Jeu")
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            anchors.fill: parent
+            font.pixelSize: 12
+        }
+
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            onClicked: vueObjetTuile.init();
+        }
+    }
+
+    Text {
+        id: text18
+        color: "#cf0707"
+        text: qsTr(vueObjetTuile.TextGameOver)
+        font.bold: true
+        font.family: "Courier"
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        anchors.fill: parent
+        font.pixelSize: 400
     }
 }

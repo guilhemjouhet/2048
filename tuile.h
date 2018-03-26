@@ -2,6 +2,7 @@
 #define TUILE_H
 #include <QObject>
 #include <iostream>
+#include <QString>
 using namespace std;
 
 class Tuile : public QObject
@@ -9,12 +10,14 @@ class Tuile : public QObject
     Q_OBJECT
     Q_PROPERTY(QList<QString> valQML READ readTuile NOTIFY tuileChanged)
     Q_PROPERTY(QList<QString> coulQML READ coulTuile NOTIFY tuileChanged)
-
+    Q_PROPERTY(QString TextGameOver READ gameOver NOTIFY tuileChanged)
 
 public:
     explicit Tuile (QObject *parent = nullptr);
     QList<QString> readTuile();
     QList<QString> coulTuile();
+    QString gameOver();
+    Q_INVOKABLE void init();
     void Nouveau();
     Q_INVOKABLE void Gauche();
     void DeplGauche();
@@ -40,6 +43,7 @@ private:
     int T[16];
     int nb_cases_vides;
     bool mouv;
+    bool JeuFini;
 
 };
 

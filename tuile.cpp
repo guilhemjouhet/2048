@@ -8,6 +8,7 @@ Tuile::Tuile(QObject *parent) : QObject(parent)
     nb_cases_vides = 16;
     Nouveau();
     mouv = false ;
+    JeuFini = false;
     emit tuileChanged();
 }
 
@@ -25,6 +26,39 @@ QList<QString> Tuile::coulTuile(){
     return l;
 }
 
+QString Tuile::gameOver(){
+    QString texteGameOver;
+    if (JeuFini){
+        bool VraieFin = true;
+        for (int i=0;i<4;i++){
+            for (int j=0;j<3;j++){
+                if (T[4*i+j]==T[4*i+j+1])
+                    VraieFin=false;
+                if (T[4*j+i]==T[4*j+4+i])
+                    VraieFin=false;
+            }
+        }
+        if (VraieFin)
+            texteGameOver=QString::fromStdString("Game Over");
+        else
+            texteGameOver=QString::fromStdString("");
+        JeuFini=false;
+    }
+    else
+        texteGameOver=QString("");
+    return texteGameOver;
+}
+
+void Tuile::init(){
+    for (int i=0; i<16;i=i+1)
+        T[i]=0;
+    nb_cases_vides = 16;
+    Nouveau();
+    mouv = false ;
+    JeuFini = false;
+    emit tuileChanged();
+}
+
 void Tuile::Gauche(){
     DeplGauche();
     int ancien = nb_cases_vides;
@@ -34,6 +68,8 @@ void Tuile::Gauche(){
     if (mouv)
         Nouveau();
     mouv=false;
+    if (nb_cases_vides==0)
+        JeuFini = true ;
     emit tuileChanged();
 }
 
@@ -46,6 +82,8 @@ void Tuile::Droite(){
     if (mouv)
         Nouveau();
     mouv=false;
+    if (nb_cases_vides==0)
+        JeuFini = true ;
     emit tuileChanged();
 }
 
@@ -58,6 +96,8 @@ void Tuile::Haut(){
     if (mouv)
         Nouveau();
     mouv=false;
+    if (nb_cases_vides==0)
+        JeuFini = true ;
     emit tuileChanged();
 }
 
@@ -70,6 +110,8 @@ void Tuile::Bas(){
     if (mouv)
         Nouveau();
     mouv=false;
+    if (nb_cases_vides==0)
+        JeuFini = true ;
     emit tuileChanged();
 }
 
