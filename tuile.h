@@ -45,6 +45,7 @@ private:
     int nb_cases_vides;
     bool mouv;
     bool JeuFini;
+    bool JeuGagne;
 
 };
 

@@ -10,6 +10,7 @@ Tuile::Tuile(QObject *parent) : QObject(parent)
     nb_cases_vides = 16;
     mouv = false ;
     JeuFini = false;
+    JeuGagne = false;
     emit tuileChanged();
 }
 
@@ -29,28 +30,34 @@ QList<QString> Tuile::coulTuile(){
 
 QList<QString> Tuile::gameOver(){
     QList<QString> texteGameOver;
-    if (JeuFini){
-        bool VraieFin = true;
-        for (int i=0;i<4;i++){
-            for (int j=0;j<3;j++){
-                if (T[4*i+j]==T[4*i+j+1])
-                    VraieFin=false;
-                if (T[4*j+i]==T[4*j+4+i])
-                    VraieFin=false;
+    if (JeuGagne){
+        texteGameOver.append(QString::fromStdString("Bravo !"));
+        texteGameOver.append(QString::fromStdString("#777777"));
+    }
+    else {
+        if (JeuFini){
+            bool VraieFin = true;
+            for (int i=0;i<4;i++){
+                for (int j=0;j<3;j++){
+                    if (T[4*i+j]==T[4*i+j+1])
+                        VraieFin=false;
+                    if (T[4*j+i]==T[4*j+4+i])
+                        VraieFin=false;
+                }
             }
-        }
-        if (VraieFin){
-            texteGameOver.append(QString::fromStdString("Game Over"));
-            texteGameOver.append(QString::fromStdString("#777777"));
+            if (VraieFin){
+                texteGameOver.append(QString::fromStdString("Game Over"));
+                texteGameOver.append(QString::fromStdString("#777777"));
+            }
+            else{
+                texteGameOver.append(QString::fromStdString(""));
+                texteGameOver.append(QString::fromStdString("#00000000"));
+            }
         }
         else{
             texteGameOver.append(QString::fromStdString(""));
             texteGameOver.append(QString::fromStdString("#00000000"));
         }
-    }
-    if (JeuFini==false){
-        texteGameOver.append(QString::fromStdString(""));
-        texteGameOver.append(QString::fromStdString("#00000000"));
     }
     return texteGameOver;
 }
@@ -69,10 +76,14 @@ void Tuile::FinAction(){
     if (mouv)
         Nouveau();
     mouv=false;
-    if (nb_cases_vides==0)
-        JeuFini = true ;
+    for (int i = 0;i<16;i++)
+        if (T[i]==2048){
+            JeuGagne =true;}
+    if ((nb_cases_vides==0)&(JeuGagne==false))
+            JeuFini = true ;
     emit tuileChanged();
     JeuFini = false;
+    JeuGagne = false;
 }
 
 void Tuile::gauche(){
@@ -119,7 +130,10 @@ void Tuile::Nouveau(){
             indice++;
         else
             if (i==indice)
-                T[i]=2;
+                if (my_rand(4)<3)
+                    T[i]=2;
+                else
+                    T[i]=4;
     }
 }
 
