@@ -1,12 +1,13 @@
 #include "tuile.h"
 #include <ctime>
+#include <iostream>
+using namespace std;
 
 Tuile::Tuile(QObject *parent) : QObject(parent)
 {
     for (int i=0; i<16;i=i+1)
         T[i]=0;
     nb_cases_vides = 16;
-    Nouveau();
     mouv = false ;
     JeuFini = false;
     emit tuileChanged();
@@ -46,9 +47,8 @@ QList<QString> Tuile::gameOver(){
             texteGameOver.append(QString::fromStdString(""));
             texteGameOver.append(QString::fromStdString("#00000000"));
         }
-        JeuFini=false;
     }
-    else{
+    if (JeuFini==false){
         texteGameOver.append(QString::fromStdString(""));
         texteGameOver.append(QString::fromStdString("#00000000"));
     }
@@ -65,18 +65,23 @@ void Tuile::init(){
     emit tuileChanged();
 }
 
-void Tuile::gauche(){
-    DeplGauche();
-    int ancien = nb_cases_vides;
-    FusGauche();
-    if (ancien!=nb_cases_vides)
-        mouv = true;
+void Tuile::FinAction(){
     if (mouv)
         Nouveau();
     mouv=false;
     if (nb_cases_vides==0)
         JeuFini = true ;
     emit tuileChanged();
+    JeuFini = false;
+}
+
+void Tuile::gauche(){
+    DeplGauche();
+    int ancien = nb_cases_vides;
+    FusGauche();
+    if (ancien!=nb_cases_vides)
+        mouv = true;
+    FinAction();
 }
 
 void Tuile::droite(){
@@ -85,12 +90,7 @@ void Tuile::droite(){
     FusDroite();
     if (ancien!=nb_cases_vides)
         mouv = true;
-    if (mouv)
-        Nouveau();
-    mouv=false;
-    if (nb_cases_vides==0)
-        JeuFini = true ;
-    emit tuileChanged();
+    FinAction();
 }
 
 void Tuile::haut(){
@@ -99,12 +99,7 @@ void Tuile::haut(){
     FusHaut();
     if (ancien!=nb_cases_vides)
         mouv = true;
-    if (mouv)
-        Nouveau();
-    mouv=false;
-    if (nb_cases_vides==0)
-        JeuFini = true ;
-    emit tuileChanged();
+    FinAction();
 }
 
 void Tuile::bas(){
@@ -113,12 +108,7 @@ void Tuile::bas(){
     FusBas();
     if (ancien!=nb_cases_vides)
         mouv = true;
-    if (mouv)
-        Nouveau();
-    mouv=false;
-    if (nb_cases_vides==0)
-        JeuFini = true ;
-    emit tuileChanged();
+    FinAction();
 }
 
 void Tuile::Nouveau(){

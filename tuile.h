@@ -2,8 +2,8 @@
 #define TUILE_H
 #include <QObject>
 #include <iostream>
-#include <QString>
 using namespace std;
+#include <QString>
 
 class Tuile : public QObject
 {
@@ -19,6 +19,7 @@ public:
     QList<QString> gameOver();
     Q_INVOKABLE void init();
     void Nouveau();
+    void FinAction();
     Q_INVOKABLE void gauche();
     void DeplGauche();
     void FusGauche();

@@ -37,6 +37,9 @@ Window {
                 case Qt.Key_Left:
                     vueObjetTuile.gauche();
                     break
+                case Qt.Key_Enter:
+                    vueObjetTuile.init();
+                    break
                 }
             }
         }
@@ -357,8 +360,10 @@ Window {
             text: qsTr("(Re)commencer Jeu")
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
+            font.bold: true
+            font.family: "Times New Roman"
             anchors.fill: parent
-            font.pixelSize: 12
+            font.pixelSize: 30
         }
 
         MouseArea {
@@ -367,7 +372,6 @@ Window {
             onClicked: vueObjetTuile.init();
         }
     }
-
     Rectangle {
         id: rectangle1
         height: 400
