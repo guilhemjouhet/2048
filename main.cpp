@@ -3,6 +3,8 @@
 #include "tuile.h"
 #include <QtQml>
 
+
+//partie centrale du programme, qui interface le code en QML avec le code en C++
 int main(int argc, char *argv[])
 {
 #if defined(Q_OS_WIN)
@@ -10,11 +12,11 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
-    Tuile tuile;
+    Tuile tuile;//création du jeu
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("vueObjetTuile",&tuile);
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.rootContext()->setContextProperty("vueObjetTuile",&tuile); //envoi de du jeu par référence à l'interface graphique
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));//lancement de la fenetre graphique
     if (engine.rootObjects().isEmpty())
         return -1;
 

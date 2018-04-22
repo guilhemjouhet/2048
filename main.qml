@@ -1,8 +1,11 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 
-
-Window {
+/*ce code est généré de manière graphique depuis l'éditeur "Design" de Qt Creator.
+Cela permet d'afficher le jeu dans une fenêtre qui intarface le jeu
+Les textes et couleurs des éléments du jeu sont modifiées dans ce code de manière à afficher les cases du jeu
+selon une communication QML/C++*/
+Window { //la fen^tre du jeu
     id: window
     visible: true
     width: 400
@@ -23,7 +26,7 @@ Window {
             font.pixelSize: 40
             focus: true
 
-            Keys.onPressed: {
+            Keys.onPressed: { //cela permet de détecter les touches pressées par le joueur et de faire évoluer le jeu en conséquence
                 switch (event.key) {
                 case Qt.Key_Up:
                     vueObjetTuile.haut();
@@ -47,7 +50,7 @@ Window {
 
     MainForm {
         id: mainForm1
-        color: qsTr(vueObjetTuile.coulQML[1])
+        color: qsTr(vueObjetTuile.coulQML[1]) //on change dynamiquement la couleur des tuiles..
         anchors.left: parent.left
         anchors.leftMargin: 100
         anchors.top: parent.top
@@ -55,7 +58,7 @@ Window {
 
         Text {
             id: text2
-            text: qsTr(vueObjetTuile.valQML[1])
+            text: qsTr(vueObjetTuile.valQML[1]) //...et leur valeur
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.fill: parent

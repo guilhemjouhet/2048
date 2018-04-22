@@ -1,6 +1,6 @@
 import QtQuick 2.4
 
-
+//case générique utilisée pour générer les 16 cases du jeu dans le code QML principal
 Rectangle {
     id: rectangle1
 
