@@ -3,38 +3,38 @@
 #include <iostream>
 using namespace std;
 
-Tuile::Tuile(QObject *parent) : QObject(parent)
+Tuile::Tuile(QObject *parent) : QObject(parent) //constructeur de l'objet
 {
     for (int i=0; i<16;i=i+1)
         T[i]=0;
-    nb_cases_vides = 16;
+    nb_cases_vides = 16; //initialement toutes les cases valent 0
     mouv = false ;
     JeuFini = false;
     JeuGagne = false;
-    emit tuileChanged();
+    emit tuileChanged();//le jeu est créé : on met la fenetre graphique à jour
 }
 
-QList<QString> Tuile::readTuile(){
-    QList<QString> l;
+QList<QString> Tuile::readTuile(){ //methode permettant d'acceder aux valeurs des cases depuis la fenêtre graphique
+    QList<QString> l; //on créée une Qlist de Qstring contenant les valeurs des cases...
     for (int i=0;i<16;i++)
         l.append(QString::number(T[i]));
-    return l;
+    return l; //... que l'on renvoie
 }
 
-QList<QString> Tuile::coulTuile(){
-    QList<QString> l;
+QList<QString> Tuile::coulTuile(){//de la meme manière que précédement, on revoie une QList de QString contenant les couleurs
+    QList<QString> l;//de toutes les cases
     for (int i=0;i<16;i++)
         l.append(QString::fromStdString(Couleur(T[i])));
     return l;
 }
 
-QList<QString> Tuile::gameOver(){
+QList<QString> Tuile::gameOver(){ //cette methode détecte si le jeu est fini
     QList<QString> texteGameOver;
-    if (JeuGagne){
+    if (JeuGagne){ //si le jeu est gagné on le fait savoir au joueur
         texteGameOver.append(QString::fromStdString("Bravo !"));
         texteGameOver.append(QString::fromStdString("#777777"));
     }
-    else {
+    else { //sinon on détecte si il s'agit d'une vraie fin (plus de mouvements sont possibles)
         if (JeuFini){
             bool VraieFin = true;
             for (int i=0;i<4;i++){
@@ -62,7 +62,7 @@ QList<QString> Tuile::gameOver(){
     return texteGameOver;
 }
 
-void Tuile::init(){
+void Tuile::init(){ //initialise les tuiles à 0
     for (int i=0; i<16;i=i+1)
         T[i]=0;
     nb_cases_vides = 16;
@@ -385,7 +385,7 @@ void Tuile::FusBas(){
     }
 }
 
-ostream& operator <<(ostream& s,const Tuile &tab){
+ostream& operator <<(ostream& s,const Tuile &tab){ //on surcharge l'opérateur <<
     for (int i=0;i<4;i++){
         for (int j=0;j<4;j++)
             s << tab.T[i*4+j] << " , ";
